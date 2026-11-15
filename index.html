@@ -3,6 +3,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>QBank Portal — RUET EEE</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23d97757'/><g transform='translate(4 4)' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h6'/></g></svg>">
+<meta name="theme-color" content="#f4eee4">
+<meta name="apple-mobile-web-app-title" content="QBank">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f4eee4;--pn:#fbf8f2;--ink:#2a1f17;--mu:#7d6a58;--ln:#e3d7c4;--ac:#d97757;--a2:#fbe9df;--dp:#a8431f;--br:#6b4630;--ok:#5f8a4f;--sh:0 10px 30px rgba(107,70,48,.12);
@@ -79,7 +82,7 @@ input:disabled{opacity:.55}.chp{border:1px solid var(--ln);background:var(--pn);
 .vback{position:absolute;left:10px;top:calc(env(safe-area-inset-top,0px) + 10px);z-index:2;width:42px;height:42px;border-radius:50%;border:1px solid rgba(0,0,0,.14);background:rgba(255,255,255,.86);color:#2a1f17;backdrop-filter:blur(8px);display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.2);opacity:.6;transition:.2s}.vback:hover{opacity:1;transform:scale(1.07)}
 @media(max-width:860px){.tw3{bottom:calc(78px + env(safe-area-inset-bottom,0px))}.sb .mu{display:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.dr{stroke-dashoffset:0}}
-</style><script>try{var _t=JSON.parse(localStorage.getItem("theme"));if(_t=="light"||_t=="dark")document.documentElement.dataset.theme=_t}catch(e){}</script></head><body>
+</style><script>try{var _t=JSON.parse(localStorage.getItem("theme"));if(_t=="light"||_t=="dark")document.documentElement.dataset.theme=_t}catch(e){}try{var c=document.createElement("canvas");c.width=c.height=180;var x=c.getContext("2d");x.fillStyle="#d97757";x.fillRect(0,0,180,180);x.strokeStyle="#fff";x.lineCap=x.lineJoin="round";x.translate(30,30);x.scale(5,5);x.lineWidth=1.8;x.stroke(new Path2D("M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h6"));var l=document.createElement("link");l.rel="apple-touch-icon";l.href=c.toDataURL("image/png");document.head.appendChild(l)}catch(e){}</script></head><body>
 <svg width="0" height="0" style="position:absolute"><defs>
 <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/></symbol>
 <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h6"/></symbol>
@@ -114,7 +117,7 @@ S.tm=LS.g("theme","auto");if(["auto","light","dark"].indexOf(S.tm)<0)S.tm="auto"
 var DQ=matchMedia("(prefers-color-scheme:dark)");
 function effT(){return S.tm=="auto"?(DQ.matches?"dark":"light"):S.tm}
 function pushT(){try{if(VW){VW.querySelector("iframe").contentWindow.postMessage({qbt:effT()},"*")}}catch(x){}}
-function applyT(){var r=document.documentElement;if(S.tm=="auto")delete r.dataset.theme;else r.dataset.theme=S.tm;r.style.colorScheme=effT();pushT()}
+function applyT(){var r=document.documentElement;if(S.tm=="auto")delete r.dataset.theme;else r.dataset.theme=S.tm;r.style.colorScheme=effT();var tc=document.querySelector("meta[name=theme-color]");if(tc)tc.content=effT()=="dark"?"#1a1410":"#f4eee4";pushT()}
 function setT(m){S.tm=m;LS.s("theme",m);applyT()}
 function th(){setT(effT()=="dark"?"light":"dark")}
 var TW;function toast(m,o){o=o||{};if(!TW){TW=document.createElement("div");TW.className="tw3";document.body.appendChild(TW)}var t=document.createElement("div");t.className="toast2 "+(o.type||"");t.setAttribute("role","status");var s=document.createElement("span");s.className="tm";s.textContent=m;t.appendChild(s);var tm=0;function kill(){clearTimeout(tm);t.remove()}
